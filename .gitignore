@@ -1,0 +1,11 @@
+// Visual Studio Code files
+.vscode
+// ************************
+
+// Node modules
+node_modules
+// ************
+
+// Distribution files
+dist
+// ******************

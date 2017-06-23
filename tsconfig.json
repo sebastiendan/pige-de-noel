@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "lib": ["es2015", "es2017", "dom"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "target": "ES5",
+    "types": ["node", "angular", "angular-ui-router", "angular-material", "express"]
+  },
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "exclude": [
+    "node_modules"
+  ],
+  "filesGlob": "src/**/*.ts",
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}
