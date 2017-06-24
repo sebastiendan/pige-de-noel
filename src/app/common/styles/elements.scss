@@ -1,0 +1,46 @@
+@import './variables';
+
+body {
+  position: relative;
+  line-height: 30px;
+  background-image: url('../assets/images/texture.png');
+  background-size: 15px;
+  background-color: $background;
+  color: $text;
+
+  md-content {
+    color: #575d6b;
+    background-color: transparent;
+  }
+
+  .ui-transition-view {
+    &.ng-enter {
+        opacity: 0;
+        transition: opacity .4s ease;
+    }
+
+    &.ng-enter-active {
+        opacity: 1;
+    }
+
+    &.ng-leave {
+        opacity: 1;
+    }
+
+    &.ng-leave-active {
+        opacity: 0;
+    }
+  }  
+}
+
+h1 {
+  font-size: 60px;
+}
+
+.md-button {
+  font-size: 10px;
+}
+
+md-menu-item>a.md-button {
+  padding-top: 0;
+}

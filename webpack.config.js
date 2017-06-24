@@ -47,23 +47,8 @@ const server = {
         loader: 'ts-loader'
       },
       {
-        test: /\.html$/,
-        loader: 'html'
-      },
-      {
-        test: /\.css$/,
-        loaders: ["style", "css"]
-      },
-      {
-        test: /\.scss$/,
-        loaders: ["style", "css", "autoprefixer-loader?{browsers:['last 2 version']}", "sass"]
-      },
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: [
-          'file?hash=sha512&digest=hex&name=img/[hash].[ext]',
-          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-        ]
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ]
   }
@@ -110,6 +95,10 @@ const client = {
       {
         test: /\.scss$/,
         loaders: ["style", "css", "autoprefixer-loader?{browsers:['last 2 version']}", "sass"]
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,

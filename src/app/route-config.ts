@@ -1,7 +1,7 @@
 import angular = require('angular');
 
 export = [
-  "$stateProvider", "$httpProvider", "$urlRouterProvider", "$locationProvider", ($stateProvider: angular.ui.IStateProvider,
+  '$stateProvider', '$httpProvider', '$urlRouterProvider', '$locationProvider', ($stateProvider: angular.ui.IStateProvider,
     $httpProvider: angular.IHttpProvider, $urlRouterProvider: angular.ui.IUrlRouterProvider, $locationProvider: angular.ILocationProvider) => {
 
       $stateProvider
@@ -13,7 +13,7 @@ export = [
           }
         });
 
-      $urlRouterProvider.otherwise("/");
+      $urlRouterProvider.otherwise('/');
       $locationProvider.html5Mode(true);
 
   }

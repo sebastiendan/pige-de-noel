@@ -7,12 +7,6 @@ import * as bodyParser from 'body-parser';
 import * as path from 'path';
 
 /**
- * API routes.
- */
-
-import * as apiController from './controllers/api';
-
-/**
  * Create Express server.
  */
 const app = express();
