@@ -1,0 +1,21 @@
+<md-content layout-padding>
+  <md-list>
+    <md-list-item ng-repeat="member in mpc.members track by $index" 
+                  ng-click="mpc.editMember(member)" 
+                  class="md-2-line noright">
+      <span>{{ member.firstName }} {{ member.lastName }}</span>
+      <span ng-if="member.isManager"
+            class="tag"
+            style="margin-left: 10px"
+            md-colors="{'background-color': 'primary'}">responsable
+      </span>
+      <md-divider></md-divider>
+    </md-list-item>
+  </md-list>
+  <div>
+    <md-button class="md-raised md-accent"
+               ui-sref="member-page"
+               type="button">Ajouter un membre
+    </md-button>
+  </div>
+</md-content>

@@ -5,25 +5,27 @@
       <i class="material-icons">card_giftcard</i>
     </md-toolbar-filler>
     <div>
-      <h2 class="md-toolbar-tools"
-          md-colors="{color: 'default-accent'}">Pige de Noël
-      </h2>      
+      <a ui-sref="home-page">
+        <h2 class="md-toolbar-tools"
+            md-colors="{color: 'default-accent'}">Pige de Noël
+        </h2>      
+      </a>
       <md-menu-bar>
         <md-menu>
           <button ng-click="$mdMenu.open()">Membres</button>
           <md-menu-content>
             <md-menu-item>
-              <md-button ui-sref="add-member">Ajouter</md-button>
+              <md-button ui-sref="member-page">Ajouter</md-button>
             </md-menu-item>            
             <md-menu-item>
-              <md-button ui-sref="add-member"
-                         disabled="!hbc.members.length">Voir la liste</md-button>
+              <md-button ui-sref="members-page"
+                         ng-disabled="!hbc.members.length">Voir la liste</md-button>
             </md-menu-item>            
           </md-menu-content>
         </md-menu>        
         <md-menu>
           <button ng-click="$mdMenu.open()"
-                  disabled="!hbc.manager">Pige</button>
+                  ng-disabled="!hbc.manager">Pige</button>
           <md-menu-content>
             <md-menu-item>
               <md-button ui-sref="add-member">Lancer</md-button>

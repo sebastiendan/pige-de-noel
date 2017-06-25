@@ -11,6 +11,20 @@ export = [
             'header': { template: '<header-block></header-block>' },
             'main': { template: '<home-page></home-page>' }
           }
+        })
+        .state('member-page', {
+          url: '/member/:memberId',
+          views: {
+            'header': { template: '<header-block></header-block>' },
+            'main': { template: '<member-page></member-page>' }
+          }
+        })
+        .state('members-page', {
+          url: '/members',
+          views: {
+            'header': { template: '<header-block></header-block>' },
+            'main': { template: '<members-page></members-page>' }
+          }
         });
 
       $urlRouterProvider.otherwise('/');

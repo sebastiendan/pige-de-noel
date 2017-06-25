@@ -2,16 +2,16 @@
   <section layout="row" 
            layout-sm="column" 
            layout-wrap>
-    <div ng-if="!hpc.pigeMembers.length">
+    <div ng-if="!hpc.members.length">
       <div>Il y a actuellement aucun membre inscrit dans la pige</div>
     </div>
-    <div ng-if="0 < hpc.pigeMembers.length && hpc.pigeMembers.length < 2">
-      <div>Il y a actuellement {{ hpc.pigeMembers.length }} membre inscrit dans la pige</div>
+    <div ng-if="0 < hpc.members.length && hpc.members.length < 2">
+      <div>Il y a actuellement {{ hpc.members.length }} membre inscrit dans la pige</div>
     </div>
-    <div ng-if="hpc.pigeMembers.length >= 2">
-      <div>Il y a actuellement {{ hpc.pigeMembers.length }} membres inscrits dans la pige</div>
+    <div ng-if="hpc.members.length >= 2">
+      <div>Il y a actuellement {{ hpc.members.length }} membres inscrits dans la pige</div>
     </div>
-    <div ng-if="!hpc.pigeManager">
+    <div ng-if="!hpc.manager">
       <div>Il n'y a actuellement pas de membre responsable de la pige (nécessaire pour lancer la pige)</div>
     </div>
   </section>

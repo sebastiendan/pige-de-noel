@@ -3,8 +3,6 @@
 body {
   position: relative;
   line-height: 30px;
-  background-image: url('../assets/images/texture.png');
-  background-size: 15px;
   background-color: $background;
   color: $text;
 
@@ -43,4 +41,17 @@ h1 {
 
 md-menu-item>a.md-button {
   padding-top: 0;
+}
+
+form {
+  max-width: 600px;
+  margin: auto;
+}
+
+.tag {
+  font-size: 12px;
+  line-height: 12px;
+  padding: 4px;
+  color: $white;
+  border-radius: 3px;
 }

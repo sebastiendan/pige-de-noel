@@ -1,6 +1,6 @@
 import {IComponentOptions} from 'angular';
 import {IMembersFactory} from '../../../factories/MembersFactory';
-import {Member} from '../../../models/Member';
+import {Member} from '../../../../common/models/Member';
 require('./headerBlock.scss');
 
 export default class HeaderBlock implements IComponentOptions {

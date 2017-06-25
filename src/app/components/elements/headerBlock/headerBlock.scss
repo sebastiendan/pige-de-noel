@@ -1,7 +1,11 @@
 @import '../../../common/styles/variables';
 
-header {  
+header-block {  
   md-toolbar.md-default-theme.md-menu-toolbar md-toolbar-filler, md-toolbar.md-menu-toolbar md-toolbar-filler {
     background-color: $green;
+  }
+
+  a {
+    text-decoration: none;
   }
 }

@@ -1,7 +1,6 @@
 import {IComponentOptions} from 'angular';
 import {IMembersFactory} from '../../../factories/MembersFactory';
-import {Member} from '../../../models/Member';
-require('./homePage.scss');
+import {Member} from '../../../../common/models/Member';
 
 export default class HomePage implements IComponentOptions {
 

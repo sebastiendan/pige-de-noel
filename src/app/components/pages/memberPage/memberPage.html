@@ -1,0 +1,42 @@
+<md-content layout-padding>
+  <form name="mpc.memberForm"
+        ng-submit="mpc.submit()"
+        novalidate>
+    <md-input-container class="md-block">
+      <label>Prénom</label>
+      <input ng-model="mpc.member.firstName"
+             name="firstName"
+             ng-required="true"/>
+      <div ng-messages="mpc.memberForm.firstName.$error" role="alert">
+        <div ng-message="required">Le prénom du membre est obligatoire</div>
+      </div>
+    </md-input-container>
+    <md-input-container class="md-block">
+      <label>Nom</label>
+      <input ng-model="mpc.member.lastName"
+             name="lastName"
+             ng-required="true"/>
+      <div ng-messages="mpc.memberForm.lastName.$error" role="alert">
+        <div ng-message="required">Le nom du membre est obligatoire</div>
+      </div>
+    </md-input-container class="md-block">
+    <spouse-selector ng-if="mpc.member"
+                     member="mpc.member">
+    </spouse-selector>
+    <md-checkbox ng-model="mpc.member.isManager"
+                 class="md-block"
+                 aria-label="Le membre est-il responsable de la pige ?">
+      Le membre est responsable de la pige
+    </md-checkbox>
+    <div>
+      <md-button class="md-raised md-accent" 
+                 ng-if="!mpc.member.id"
+                 type="submit">Ajouter le membre
+      </md-button>
+      <md-button class="md-raised md-accent" 
+                 ng-if="mpc.member.id"
+                 type="submit">Mettre à jour le membre
+      </md-button>
+    </div>
+  </form>
+</md-content>

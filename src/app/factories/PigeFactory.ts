@@ -1,6 +1,6 @@
 import {IPromise, IHttpPromiseCallbackArg, IHttpService, IWindowService} from 'angular';
 import {HttpResponse} from '../models/HttpResponse';
-import {Pige} from '../models/Pige';
+import {Pige} from '../../common/models/Pige';
 
 export interface IPigeFactory {
   get(): IPromise<Pige | { [id: string]: Array<string> }>;

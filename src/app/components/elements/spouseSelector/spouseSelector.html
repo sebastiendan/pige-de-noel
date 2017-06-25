@@ -1,0 +1,16 @@
+<md-autocomplete md-no-cache="true"
+                 md-selected-item="ssc.selectedSpouse"
+                 md-search-text="ssc.searchText"
+                 md-items="spouse in ssc.querySearch(ssc.searchText)"
+                 md-item-text="spouse.fullName"
+                 md-selected-item-change="ssc.selectedSpouseChange(spouse)"
+                 md-min-length="0"
+                 md-require-match
+                 md-floating-label="Conjoint(e)">
+  <md-item-template>
+    <span md-highlight-text="ssc.searchText" md-highlight-flags="^i">{{ spouse.fullName }}</span>
+  </md-item-template>
+  <md-not-found>
+    Aucun membre trouvé
+  </md-not-found>
+</md-autocomplete>
