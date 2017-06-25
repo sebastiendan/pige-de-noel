@@ -30,7 +30,7 @@ class SpouseSelectorController {
       .then((members: Member[]) => {
         this.members = members
           .filter((member: Member) => {
-            return member.id != this.member.id;
+            return member.id != this.member.id && (!member.spouseId || member.spouseId == this.member.id);
           })
           .map((member: Member) => {
             member.fullName = member.firstName + ' ' + member.lastName;

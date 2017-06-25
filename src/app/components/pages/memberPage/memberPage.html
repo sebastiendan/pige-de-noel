@@ -37,6 +37,11 @@
                  ng-if="mpc.member.id"
                  type="submit">Mettre à jour le membre
       </md-button>
+      <md-button class="md-raised md-accent" 
+                 ng-if="mpc.member.id"
+                 ng-click="mpc.member = null"
+                 type="button">Ajouter un nouveau membre
+      </md-button>
     </div>
   </form>
 </md-content>
