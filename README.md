@@ -10,12 +10,14 @@ Cette application permet à Monsieur Brault de réaliser la pige de façon autom
 
 ## Compilation de l'application
 1. Installer les modules externes (npm)
+
 ```npm install```
 
 2. Builder l'application et lancer le serveur
-```npm start```
+
+```npm run start```
 
 ## Tests
 Il est possible d'exécuter plusieurs tests unitaires.
+
 ```npm test```
-⋅⋅* Un membre ne peut pas s'offrir de cadeau à lui-même
