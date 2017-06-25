@@ -20,7 +20,7 @@ export let runPige = (req: Request, res: Response) => {
 
 export let getPige = (req: Request, res: Response) => {  
   if (!pige) {
-    res.status(403).json({
+    res.status(404).json({
       error: 'La pige n\'a pas été lancée'
     });
   } else {

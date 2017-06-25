@@ -6,9 +6,12 @@ body {
   background-color: $background;
   color: $text;
 
+  header {
+    margin-bottom: 40px;
+  }
+
   md-content {
     color: #575d6b;
-    background-color: transparent;
   }
 
   .ui-transition-view {

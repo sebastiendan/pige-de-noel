@@ -1,5 +1,19 @@
 <md-content layout-padding>
-  <div ng-repeat="member in prpc.members track by $index">
+  <md-input-container>
+    <label>Filtrer par membre</label>
+    <md-select ng-model="prpc.selectedMember">
+      <md-option ng-repeat="member in prpc.members track by $index" 
+                ng-value="member.id">{{ member.firstName}} {{ member.lastName }}
+      </md-option>
+    </md-select>
+    <md-button class="md-raised md-accent" 
+               ng-show="prpc.selectedMember"
+               ng-click="prpc.selectedMember = null"
+               type="button">Effacer le filtre
+    </md-button>
+  </md-input-container>
+  <div ng-repeat="member in prpc.members track by $index"
+       ng-if="!prpc.selectedMember || prpc.selectedMember && member.id == prpc.selectedMember">
     <div class="member"
         md-colors="{'background-color': 'primary'}">{{ member.firstName }} {{ member.lastName }}
     </div>
