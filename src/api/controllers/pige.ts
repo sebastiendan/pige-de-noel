@@ -1,13 +1,55 @@
 import {Response, Request} from 'express';
+import {Member} from '../../common/models/Member';
 import {members} from './members';
 
 export let pige: number[];
 
 export let runPige = (req: Request, res: Response) => {
+  pige = runPigeCalc(members);
+
+  if (!pige) {
+    res.status(500).json({
+      error: 'Erreur lors du calcul de la pige'
+    });
+  } else {
+    res.status(200).json({
+      result: pige
+    });
+  }
+};
+
+export let getPige = (req: Request, res: Response) => {  
+  if (!pige) {
+    res.status(403).json({
+      error: 'La pige n\'a pas été lancée'
+    });
+  } else {
+    res.status(200).json({
+      result: pige
+    });
+  }
+};
+
+export let runPigeCalc = (members: Member[]) => {
   let feasibleMatrix: number[][] = [],  
       i: number,
       j: number,
       len: number = members.length;
+
+  // Return null if impossible to solve
+  // **********************************
+
+  // There must be at least 2 members
+  if (members.length < 3)
+    return null;
+
+  // There must be at least 4 members if there is a couple
+  if (members.filter((member: Member) => { return member.spouseId }).length && members.length < 4)
+    return null;
+
+  // There must be a manager
+  if (!members.find((member: Member) => { return member.isManager }))
+    return null;
 
   // Create the feasible matrix
   // **************************
@@ -35,28 +77,13 @@ export let runPige = (req: Request, res: Response) => {
   // ***********************************************
   pige = getRandomPermutation();
   
-
   // Test if the permutation is ok, get a new one if not
   // ***************************************************
   while (!validatePermutation(pige, feasibleMatrix)) {
     pige = getRandomPermutation();
   }
 
-  res.status(200).json({
-    result: pige
-  });
-};
-
-export let getPige = (req: Request, res: Response) => {  
-  if (!pige) {
-    res.status(403).json({
-      error: 'La pige n\'a pas été lancée'
-    });
-  } else {
-    res.status(200).json({
-      result: pige
-    });
-  }
+  return pige;
 };
 
 let getRandomPermutation = () => {

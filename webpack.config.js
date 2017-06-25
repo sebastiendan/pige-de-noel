@@ -1,7 +1,6 @@
 var webpack = require('webpack');
 var merge = require('webpack-merge');
 var validate = require('webpack-validator');
-var parts = require('./webpack.parts');
 var path = require('path');
 var fs = require('fs');
 const pkg = require('./package.json');

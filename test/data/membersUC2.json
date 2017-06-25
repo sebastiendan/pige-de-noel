@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "firstName": "Phil",
+    "lastName": "Brault",
+    "spouseId": 2,
+    "isManager": true
+  },
+  {
+    "id": 2,
+    "firstName": "Catherine",
+    "lastName": "Brault",
+    "spouseId": 1,
+    "isManager": false
+  },
+  {
+    "id": 3,
+    "firstName": "Julie",
+    "lastName": "Tremblay",
+    "spouseId": null,
+    "isManager": false
+  }
+]

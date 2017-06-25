@@ -8,7 +8,7 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "target": "ES5",
-    "types": ["node", "angular", "angular-ui-router", "angular-material", "express"]
+    "types": ["node", "angular", "angular-ui-router", "angular-material", "express", "jasmine"]
   },
   "compileOnSave": false,
   "buildOnSave": false,
