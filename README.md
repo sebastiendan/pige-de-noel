@@ -8,7 +8,7 @@ Cette pige a pour but de distribuer aléatoirement les membres donneurs et recev
 
 Cette application permet à Monsieur Brault de réaliser la pige de façon automatique, rapide et sans triche !
 
-## Compilation de l'application
+## Compilation et utilisation de l'application
 1. Installer les modules externes (npm)
 
 ```npm install```
@@ -17,7 +17,8 @@ Cette application permet à Monsieur Brault de réaliser la pige de façon autom
 
 ```npm run start```
 
-## Tests
-Il est possible d'exécuter plusieurs tests unitaires.
+3. Ouvrir l'adresse indiquée dans les logs du serveur dans votre navigateur (locahost)
+
+## Tests unitaires
 
 ```npm test```
