@@ -1,27 +1,47 @@
-import {IPromise, IHttpPromiseCallbackArg, IHttpService, IWindowService} from 'angular';
+import {IPromise, IHttpPromiseCallbackArg, IHttpService, IQService} from 'angular';
 import {HttpResponse} from '../models/HttpResponse';
-import {Pige} from '../../common/models/Pige';
 
 export interface IPigeFactory {
-  get(): IPromise<Pige | { [id: string]: Array<string> }>;
+  run(): IPromise<number[] | { [id: string]: Array<string> }>;
+  get(): IPromise<number[] | { [id: string]: Array<string> }>;
 }
 
 export class PigeFactory implements IPigeFactory {
   static $inject = ['$http'];
 
+  private pige: number[];
+
   constructor(private $http: IHttpService,
-              private $window: IWindowService) {
+              private $q: IQService) {
   }
 
-  get(): IPromise<Pige | { [id: string]: Array<string> }> {
-    return this.$http.get(this.$window.urls.pigeUrl).then((c: IHttpPromiseCallbackArg<HttpResponse>) => {
+  run(): IPromise<number[] | { [id: string]: Array<string> }> {
+    return this.$http.get('/api/pige/run').then((c: IHttpPromiseCallbackArg<HttpResponse>) => {
+      this.pige = c.data.result;
       return c.data.result;
     }).catch((c: IHttpPromiseCallbackArg<HttpResponse>) => {
       throw c.data.error;
     });
-  }
+  };
 
-  static getInstance($http: IHttpService, $window: IWindowService): IPigeFactory {
-    return new PigeFactory($http, $window);
+  get(): IPromise<number[] | { [id: string]: Array<string> }> {
+    let deffered = this.$q.defer();
+
+    if (this.pige) {
+      deffered.resolve(this.pige);
+    } else {
+      this.$http.get('/api/pige/get').then((c: IHttpPromiseCallbackArg<HttpResponse>) => {
+        this.pige = c.data.result;
+        deffered.resolve(c.data.result);
+      }).catch((c: IHttpPromiseCallbackArg<HttpResponse>) => {
+        deffered.reject(c.data.error);
+      });
+    }
+
+    return deffered.promise;
+  };
+
+  static getInstance($http: IHttpService, $q: IQService): IPigeFactory {
+    return new PigeFactory($http, $q);
   }
 }

@@ -28,10 +28,17 @@
                   ng-disabled="!hbc.manager">Pige</button>
           <md-menu-content>
             <md-menu-item>
-              <md-button ui-sref="add-member">Lancer</md-button>
+              <md-button ng-click="hbc.runPige()"
+                         ng-if="!hbc.pige">Lancer
+              </md-button>
+              <md-button ng-click="hbc.runPige()"
+                         ng-if="hbc.pige">Relancer
+              </md-button>
             </md-menu-item>            
             <md-menu-item>
-              <md-button ui-sref="add-member">Voir les résultats</md-button>
+              <md-button ui-sref="pige-result-page"
+                         ng-disabled="!hbc.pige">Voir les résultats
+              </md-button>
             </md-menu-item>            
           </md-menu-content>
         </md-menu>        

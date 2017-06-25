@@ -1,0 +1,21 @@
+<md-content layout-padding>
+  <div ng-repeat="member in prpc.members track by $index">
+    <div class="member"
+        md-colors="{'background-color': 'primary'}">{{ member.firstName }} {{ member.lastName }}
+    </div>
+    <i class="material-icons"
+      md-colors="{'color': 'accent'}">keyboard_arrow_right
+    </i>
+    <div ng-repeat="receiver in prpc.members track by $index"
+        class="member receiver"
+        md-colors="{'background-color': 'primary'}"
+        ng-if="receiver.id == prpc.pige[member.id-1]">{{ receiver.firstName }} {{ receiver.lastName }}
+    </div>
+  </div>
+  <div>
+    <md-button class="md-raised md-accent" 
+               ng-click="prpc.runPige()"
+               type="button">Relancer la pige
+    </md-button>
+  </div>
+</md-content>

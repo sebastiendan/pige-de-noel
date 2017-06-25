@@ -1,7 +1,7 @@
 import {Response, Request} from 'express';
 import {Member} from '../../common/models/Member';
 
-let members = require('../data/members.json');
+export let members = require('../data/members.json');
 
 export let getMembers = (req: Request, res: Response) => {  
   res.status(200).json({

@@ -6,6 +6,7 @@ import SpouseSelector from './components/elements/spouseSelector/spouseSelector'
 import HomePage from './components/pages/homePage/homePage';
 import MemberPage from './components/pages/memberPage/memberPage';
 import MembersPage from './components/pages/membersPage/membersPage';
+import PigeResultPage from './components/pages/pigeResultPage/pigeResultPage';
 
 import app from './app';
 
@@ -17,3 +18,4 @@ app.component('spouseSelector', new SpouseSelector());
 app.component('homePage', new HomePage());
 app.component('memberPage', new MemberPage());
 app.component('membersPage', new MembersPage());
+app.component('pigeResultPage', new PigeResultPage());

@@ -25,6 +25,13 @@ export = [
             'header': { template: '<header-block></header-block>' },
             'main': { template: '<members-page></members-page>' }
           }
+        })
+        .state('pige-result-page', {
+          url: '/pige-result',
+          views: {
+            'header': { template: '<header-block></header-block>' },
+            'main': { template: '<pige-result-page></pige-result-page>' }
+          }
         });
 
       $urlRouterProvider.otherwise('/');
