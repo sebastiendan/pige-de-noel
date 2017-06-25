@@ -17,7 +17,7 @@ Cette application permet à Monsieur Brault de réaliser la pige de façon autom
 
 ```npm run start```
 
-3. Ouvrir l'adresse indiquée dans les logs du serveur dans votre navigateur (locahost)
+3. Ouvrir l'adresse indiquée dans les logs du serveur dans votre navigateur (localhost)
 
 ## Tests unitaires
 
