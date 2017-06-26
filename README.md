@@ -13,6 +13,8 @@ Cette application permet à Monsieur Brault de réaliser la pige de façon autom
 
 ```npm install```
 
+*Note* : nécessite également l'installation globale de ``typescript`` et ``webpack``
+
 2. Builder l'application et lancer le serveur
 
 ```npm run start```
